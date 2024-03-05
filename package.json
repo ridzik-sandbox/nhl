@@ -1,0 +1,36 @@
+{
+  "name": "simple-crud",
+  "version": "1.0.0",
+  "description": "Creating a simple CRUD nodejs app to host on Heroku.",
+  "main": "index.js",
+  "scripts": {
+    "startui": "parcel client/index.html",
+    "startg": "nodemon server/server.js",
+    "startdb": "npx json-server server/db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridzik-sandbox/simple-crud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ridzik-sandbox/simple-crud/issues"
+  },
+  "homepage": "https://github.com/ridzik-sandbox/simple-crud#readme",
+  "dependencies": {
+    "@apollo/client": "^3.9.5",
+    "apollo-server": "^3.13.0",
+    "axios": "^1.6.7",
+    "graphql": "^16.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-alpha.23",
+    "nodemon": "^3.0.3",
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  }
+}
