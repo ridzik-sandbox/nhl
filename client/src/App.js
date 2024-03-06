@@ -20,8 +20,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-{
-  /* <Route path="/register" component={Register} />
-<Route path="/create" component={CreatePost} />
-<Route path="/update/:id" component={UpdatePost} /> */
-}
