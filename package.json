@@ -1,7 +1,7 @@
 {
-  "name": "simple-crud",
+  "name": "nhl",
   "version": "1.0.0",
-  "description": "Creating a simple CRUD nodejs app to host on Heroku.",
+  "description": "Playing around with consuming NHL stats, injecting them into a JSON-Server DB, using NodeJS/GraphQL to pull the data out, and React/MUI for display.",
   "main": "index.js",
   "scripts": {
     "startui": "parcel client/index.html",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ridzik-sandbox/simple-crud.git"
+    "url": "git+https://github.com/ridzik-sandbox/nhl.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ridzik-sandbox/simple-crud/issues"
+    "url": "https://github.com/ridzik-sandbox/nhl/issues"
   },
-  "homepage": "https://github.com/ridzik-sandbox/simple-crud#readme",
+  "homepage": "https://github.com/ridzik-sandbox/nhl#readme",
   "dependencies": {
     "@apollo/client": "^3.9.5",
     "@emotion/react": "^11.11.4",
