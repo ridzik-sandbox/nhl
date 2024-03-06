@@ -2,24 +2,7 @@ import * as React from 'react';
 import { Box } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { useQuery } from '@apollo/client';
-import gql from 'graphql-tag';
-
-const GET_SKATERS = gql`
-  {
-    skaters {
-      id
-      firstName {
-        default
-      }
-      lastName {
-        default
-      }
-      points
-      goals
-      assists
-    }
-  }
-`;
+import { GET_SKATERS } from '../queries/StatsQuery';
 
 const columns = [
   {
