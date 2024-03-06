@@ -2,8 +2,8 @@ import * as React from 'react';
 import { CssBaseline, Box } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import StatLeaders from './pages/StatLeaders';
-import StatInsights from './pages/StatInsights';
+import SkaterTable from './pages/Skaters';
+import Insights from './pages/Insights';
 
 export default function App() {
   return (
@@ -12,8 +12,8 @@ export default function App() {
         <CssBaseline />
         <Navigation />
         <Routes>
-          <Route exact path="/" element={<StatLeaders />} />
-          <Route path="/insights" element={<StatInsights />} />
+          <Route exact path="/" element={<SkaterTable />} />
+          <Route path="/insights" element={<Insights />} />
         </Routes>
       </Box>
     </BrowserRouter>

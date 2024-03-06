@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Container, Box, Toolbar } from '@mui/material';
 import Title from '../components/Title';
 
-export default function StatInsights() {
+export default function Insights() {
   return (
     <Box sx={{ display: 'flex' }}>
       <Box

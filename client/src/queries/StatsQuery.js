@@ -13,6 +13,8 @@ export const GET_SKATERS = gql`
       points
       goals
       assists
+      teamAbbrev
+      teamLogo
     }
   }
 `;
