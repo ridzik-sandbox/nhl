@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './src/styles/theme';
 import App from './src/App';
 
 const client = new ApolloClient({
@@ -10,14 +10,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const defaultTheme = createTheme();
-
 const container = document.getElementById('app');
 const root = ReactDOM.createRoot(container);
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
     </ApolloProvider>
