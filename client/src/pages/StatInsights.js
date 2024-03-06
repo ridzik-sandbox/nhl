@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
+import { Container, Box, Toolbar } from '@mui/material';
 import Title from '../components/Title';
 
 export default function StatInsights() {
