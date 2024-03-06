@@ -8,7 +8,8 @@ module.exports = {
       try {
         const skaters = await axios.get(url + '/skaters');
 
-        return skaters.data.map(({ firstName, lastName, points, goals, assists }) => ({
+        return skaters.data.map(({ id, firstName, lastName, points, goals, assists }) => ({
+          id,
           firstName,
           lastName,
           points,
