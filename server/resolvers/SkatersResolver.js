@@ -8,14 +8,18 @@ module.exports = {
       try {
         const skaters = await axios.get(url + '/skaters');
 
-        return skaters.data.map(({ id, firstName, lastName, points, goals, assists }) => ({
-          id,
-          firstName,
-          lastName,
-          points,
-          goals,
-          assists,
-        }));
+        return skaters.data.map(
+          ({ id, firstName, lastName, points, goals, assists, teamAbbrev, teamLogo }) => ({
+            id,
+            firstName,
+            lastName,
+            points,
+            goals,
+            assists,
+            teamAbbrev,
+            teamLogo,
+          })
+        );
       } catch (error) {
         console.log(error);
         throw error;
