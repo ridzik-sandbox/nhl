@@ -33,6 +33,7 @@ const typeDefs = gql`
 
   type Query {
     skaters: [Skaters]
+    skater(id: String): Skaters
   }
 `;
 

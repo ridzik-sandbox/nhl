@@ -3,7 +3,7 @@ const { SkatersResolver } = require('./SkatersResolver.js');
 const resolvers = {
   Query: {
     skaters: SkatersResolver.getSkaters,
-    // getPostInfo: PostsResolver.getPostInfo,
+    skater: SkatersResolver.getSkater,
   },
   // Mutation: {
   //   registerUser: UserResolver.registerUser,
