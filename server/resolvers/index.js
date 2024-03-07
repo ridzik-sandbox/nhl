@@ -5,10 +5,10 @@ const resolvers = {
     skaters: SkatersResolver.getSkaters,
     skater: SkatersResolver.getSkater,
   },
-  Mutation: {
-    // addLike: LikesResolver.addLike,
-    // removeLike: LikesResolver.removeLike,
-  },
+  // Mutation: {
+  // addLike: LikesResolver.addLike,
+  // removeLike: LikesResolver.removeLike,
+  // },
 };
 
 module.exports = { resolvers };
