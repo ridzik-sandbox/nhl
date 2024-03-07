@@ -4,9 +4,9 @@
   "description": "Playing around with consuming NHL stats, injecting them into a JSON-Server DB, using NodeJS/GraphQL to pull the data out, and React/MUI for display.",
   "main": "index.js",
   "scripts": {
-    "startui": "parcel client/index.html",
-    "startg": "nodemon server/server.js",
-    "startdb": "npx json-server server/db.json",
+    "ui": "parcel client/index.html",
+    "gql": "nodemon server/server.js",
+    "db": "npx json-server server/db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "@apollo/client": "^3.9.5",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.12",
     "@mui/icons-material": "^5.15.12",
     "@mui/material": "^5.15.12",
     "@mui/x-charts": "^6.19.5",
