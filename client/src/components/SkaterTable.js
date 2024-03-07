@@ -73,7 +73,7 @@ export default function SkaterTable() {
   if (error) return <h1>Something went wrong!</h1>;
   if (loading) return <h1>Loading...</h1>;
   return (
-    <Box sx={{ height: 900, width: '100%' }}>
+    <Box sx={{ height: 600, width: '100%' }}>
       <DataGrid
         rows={data.skaters}
         columns={columns}

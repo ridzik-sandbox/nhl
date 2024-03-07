@@ -7,7 +7,7 @@ import { SkaterContext } from '../contexts/SkaterContext';
 export default function SkaterProfile() {
   const skater = useContext(SkaterContext);
   const { id } = skater;
-  console.log(id);
+
   const { loading, error, data } = useQuery(GET_SKATER, {
     variables: { id: id },
   });
