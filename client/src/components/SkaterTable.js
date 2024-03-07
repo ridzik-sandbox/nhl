@@ -1,5 +1,5 @@
 import { useContext, React } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { useQuery } from '@apollo/client';
 import { GET_SKATERS } from '../queries/StatsQuery';
@@ -15,17 +15,8 @@ export default function SkaterTable() {
       field: 'fullName',
       headerName: 'Name',
       width: 180,
-      renderCell: (params) => (
-        <Button
-          variant="text"
-          size="small"
-          onClick={() => {
-            setSkaterId(params.row.id);
-          }}
-        >
-          {params.row.firstName.default || ''} {params.row.lastName.default || ''}
-        </Button>
-      ),
+      valueGetter: (params) =>
+        `${params.row.firstName.default || ''} ${params.row.lastName.default || ''}`,
     },
     {
       field: 'teamAbbrev',
@@ -73,10 +64,11 @@ export default function SkaterTable() {
   if (error) return <h1>Something went wrong!</h1>;
   if (loading) return <h1>Loading...</h1>;
   return (
-    <Box sx={{ height: 600, width: '100%' }}>
+    <Box sx={{ height: 700, width: '100%' }}>
       <DataGrid
         rows={data.skaters}
         columns={columns}
+        onRowClick={(params) => setSkaterId(params.id)}
         initialState={{
           pagination: {
             paginationModel: {

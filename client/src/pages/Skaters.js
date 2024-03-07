@@ -28,29 +28,28 @@ export default function StatLeaders() {
                   p: 2,
                   display: 'flex',
                   flexDirection: 'column',
-                  height: 700,
+                  height: 800,
                 }}
               >
-                <Title>Stat Leaders</Title>
+                <Title>Skating Leaders</Title>
                 <SkaterTable />
               </Paper>
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper
-                sx={{
-                  p: 2,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: 240,
-                }}
-              >
-                <Title>Skater Profile</Title>
-                {id && <SkaterProfile />}
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>Orders</Paper>
-            </Grid>
+            {id && (
+              <Grid item xs={12} md={4} lg={3}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 800,
+                  }}
+                >
+                  <Title>Skater Profile</Title>
+                  <SkaterProfile />
+                </Paper>
+              </Grid>
+            )}
           </Grid>
         </Container>
       </Box>
