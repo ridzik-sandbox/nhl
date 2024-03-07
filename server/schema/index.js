@@ -1,6 +1,10 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
+  type Likes {
+    ID: String
+  }
+
   type TeamName {
     default: String
   }
@@ -31,10 +35,20 @@ const typeDefs = gql`
     firstName: FirstName
   }
 
+  type Response {
+    ID: String
+    err: Boolean!
+    msg: String
+  }
+
   type Query {
     skaters: [Skaters]
     skater(id: String): Skaters
   }
-`;
 
+  type Mutation {
+    addLike(ID: String): Response!
+  }
+`;
+//    removeLike(ID: String): Response!
 module.exports = { typeDefs };
