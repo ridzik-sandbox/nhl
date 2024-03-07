@@ -20,16 +20,37 @@ export default function StatLeaders() {
         }}
       >
         <Toolbar />
-        <Container maxWidth="xl" sx={{ mt: 3, mb: 3 }}>
-          <Grid item xs={12} sx={{ display: 'flex' }}>
-            <Paper sx={{ p: 2, flexFlow: 'row nowrap' }}>
-              <Title>Stat Leaders</Title>
-              <SkaterTable />
-            </Paper>
-            <Card sx={{ p: 2, flexFlow: 'row nowrap', border: 'solid 1px red' }}>
-              <Title>Skater Profile</Title>
-              {id && <SkaterProfile />}
-            </Card>
+        <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 700,
+                }}
+              >
+                <Title>Stat Leaders</Title>
+                <SkaterTable />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 240,
+                }}
+              >
+                <Title>Skater Profile</Title>
+                {id && <SkaterProfile />}
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>Orders</Paper>
+            </Grid>
           </Grid>
         </Container>
       </Box>
