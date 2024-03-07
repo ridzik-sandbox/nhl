@@ -1,17 +1,46 @@
-import { useContext, React } from 'react';
-import { useQuery } from '@apollo/client';
-import { Box, Typography, Grid, Divider } from '@mui/material';
+import { useContext, useState, React } from 'react';
+import { useQuery, useMutation } from '@apollo/client';
+import { Box, Typography, Grid, Divider, Chip } from '@mui/material';
+import { ThumbDown as ThumbDownIcon, ThumbUp as ThumbUpIcon } from '@mui/icons-material';
 import { GET_SKATER } from '../queries/StatsQuery';
+import { ADD_LIKE, REMOVE_LIKE } from '../queries/LikesQuery';
 import { SkaterContext } from '../contexts/SkaterContext';
 import Title from '../components/Title';
 
 export default function SkaterProfile() {
+  const [liked, setLiked] = useState(false);
   const skater = useContext(SkaterContext);
   const { id } = skater;
 
   const { loading, error, data } = useQuery(GET_SKATER, {
     variables: { id: id },
   });
+
+  const [addLike] = useMutation(ADD_LIKE, {
+    onCompleted({ addLike }) {
+      let { err, msg } = addLike;
+      alert(msg);
+      if (!err) {
+        setLiked(true);
+      }
+    },
+    onError(error) {
+      console.log('An Error Occured.');
+    },
+  });
+
+  // const [removeLike] = useMutation(REMOVE_LIKE, {
+  //   onCompleted({ removeLike }) {
+  //     let { err, msg } = removeLike;
+  //     alert(msg);
+  //     if (!err) {
+  //       setLiked(false);
+  //     }
+  //   },
+  //   onError(error) {
+  //     console.log('An Error Occured.');
+  //   },
+  // });
 
   if (error) return <h1>Something went wrong!</h1>;
   if (loading) return <h1>Loading...</h1>;
@@ -38,7 +67,7 @@ export default function SkaterProfile() {
           </Grid>
         </Grid>
         <Grid sx={{ pr: 4 }}>
-          <Typography color="text.secondary" variant="h2">
+          <Typography color="text.secondary" variant="h1">
             #{data.skater.sweaterNumber}
           </Typography>
         </Grid>
@@ -58,12 +87,37 @@ export default function SkaterProfile() {
           </Typography>
         </Grid>
         <Grid>
-          <Typography color="text.secondary" variant="h6" sx={{ mt: 1, pr: 6 }}>
+          <Typography color="text.secondary" variant="h6" sx={{ pr: 6 }}>
             {data.skater.position}
           </Typography>
         </Grid>
       </Grid>
-      <Grid sx={{ mt: 2 }}>
+      <Divider />
+      <Grid sx={{ display: 'flex', flexFlow: 'row nowrap', justifyContent: 'space-around', p: 3 }}>
+        <Chip
+          label="Like"
+          onClick={() => {
+            // if (liked) {
+            //   removeLike({
+            //     variables: {
+            //       ID: data.skater.id,
+            //     },
+            //   });
+            // } else {
+            addLike({
+              variables: {
+                ID: data.skater.id,
+              },
+            });
+            // }
+          }}
+          icon={<ThumbUpIcon />}
+        />
+        <Chip label="Dislike" onClick={() => alert('Dislike')} icon={<ThumbDownIcon />} />
+      </Grid>
+
+      <Grid>
+        <Divider />
         <Title>23-24 Season</Title>
         <Grid
           sx={{ display: 'flex', flexFlow: 'row nowrap', justifyContent: 'space-between', pb: 1 }}

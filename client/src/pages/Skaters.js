@@ -35,21 +35,21 @@ export default function StatLeaders() {
                 <SkaterTable />
               </Paper>
             </Grid>
-            {id && (
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 800,
-                  }}
-                >
-                  <Title>Skater Profile</Title>
-                  <SkaterProfile />
-                </Paper>
-              </Grid>
-            )}
+
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 800,
+                }}
+              >
+                <Title>Skater Profile</Title>
+                {id && <SkaterProfile />}
+                {!id && <h3>Select a skater</h3>}
+              </Paper>
+            </Grid>
           </Grid>
         </Container>
       </Box>
