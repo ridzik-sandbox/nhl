@@ -9,9 +9,9 @@ module.exports = {
         const json = JSON.stringify({ ID: params.ID });
         const res = await axios.post(url + '/likes', json);
 
-        res.data.data;
+        res.data;
         return {
-          ID: res.data.data.ID,
+          ID: res.data.ID,
           err: false,
           msg: 'Like Added Successfully.',
         };

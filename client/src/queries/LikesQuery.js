@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const ADD_LIKE = gql`
-  mutation ($id: String) {
-    addLike(ID: $id) {
+  mutation ($ID: String) {
+    addLike(ID: $ID) {
       ID
       err
       msg
