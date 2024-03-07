@@ -104,7 +104,7 @@ export function overrides(theme) {
     },
     MuiPaper: {
       defaultProps: {
-        elevation: 0,
+        elevation: 2,
       },
     },
     MuiTableCell: {
@@ -118,11 +118,20 @@ export function overrides(theme) {
     MuiDataGrid: {
       styleOverrides: {
         root: {
+          '$ .MuiDataGrid-columnHeader:focus': {
+            outline: 'none',
+          },
+          '& .MuiDataGrid-columnHeader:focus-within': {
+            outline: 'none',
+          },
           '& .MuiDataGrid-cell:focus': {
             outline: 'none',
           },
           '& .MuiDataGrid-cell:focus-within': {
             outline: 'none',
+          },
+          '& .MuiDataGrid-cell:hover': {
+            cursor: 'pointer',
           },
         },
       },
