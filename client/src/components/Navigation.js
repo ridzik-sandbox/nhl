@@ -89,7 +89,7 @@ export default function Navigation() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            NHL Information
+            Fun With NHL Data
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
