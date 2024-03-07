@@ -28,7 +28,7 @@ export default function StatLeaders() {
             </Paper>
             <Card sx={{ p: 2, flexFlow: 'row nowrap', border: 'solid 1px red' }}>
               <Title>Skater Profile</Title>
-              <SkaterProfile />
+              {id && <SkaterProfile />}
             </Card>
           </Grid>
         </Container>
