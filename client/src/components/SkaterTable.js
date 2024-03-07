@@ -86,6 +86,7 @@ export default function SkaterTable() {
         }}
         pageSizeOptions={[5, 10, 25, 50, 100]}
         checkboxSelection={false}
+        hideFooterSelectedRowCount={true}
       />
     </Box>
   );
